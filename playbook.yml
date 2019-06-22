@@ -1,0 +1,12 @@
+- hosts: dvrax.com
+  become: yes
+  become_method: doas
+
+  vars:
+  - dns_name: dvrax.com
+
+  tasks:
+  - name: Upload html files
+    copy:
+      src: ./resume.html
+      dest: /var/www/myhtdocs/
